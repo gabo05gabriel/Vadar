@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Vadar.Models.pasajes>
+
+@{
+    ViewBag.Title = "VerPasajes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ver </h2>
+
+<table class="table">
+        @Html.Partial("Table", Model)
+</table>

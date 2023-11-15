@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Vadar.Models.pasajes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Estilos/boton.css" />
+
+<h2>Index</h2>
+
+<p>
+    <button type="button" class="btn" onclick="location.href='@Url.Action("Create")'">Crear Nuevo</button>
+    <button type="button" class="btn" onclick="location.href='@Url.Action("VerPasajes", "pasajes")'">Ver Pasajes</button>
+    <button type="button" class="btn" onclick="location.href='@Url.Action("Search", "pasajes")'">Buscar Pasajes</button>
+
+    <h4>Solo el personal autorizado tiene acceso a ver todos los datos registrados, si se equivoca de dato porfavor consultar con Deidy o Gabriel</h4>
+
+    <img src="~/Imagenes/cbe4.jpg" alt="Descripción de la imagen" style="max-width: 50%; height: auto;">
+
+</p>

@@ -1,0 +1,36 @@
+﻿/* Estilo personalizado para la barra de navegación */
+.navbar {
+    background-color: #004173; /* Color de fondo de la barra de navegación */
+    border: none; /* Elimina el borde */
+    border-radius: 0; /* Elimina el redondeo de los bordes */
+}
+
+.navbar-brand {
+    color: #fff; /* Color del texto del logotipo en la barra de navegación */
+}
+
+.navbar-nav li a {
+    color: #fff; /* Color del texto de los enlaces en la barra de navegación */
+}
+
+/* Estilo personalizado para el pie de página */
+footer {
+    background-color: #004173; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo personalizado para los enlaces en el cuerpo de la página */
+a {
+    color: #004173; /* Color predeterminado para los enlaces */
+}
+
+    a:hover {
+        color: #ff6600; /* Cambia el color al pasar el cursor por encima de los enlaces */
+    }
+
+/* Estilo personalizado para el contenido principal */
+.body-content {
+    padding: 20px;
+}

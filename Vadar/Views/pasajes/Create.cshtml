@@ -1,0 +1,99 @@
+﻿@model Vadar.Models.pasajes
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="~/Estilos/Formularios.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Crear Pasajes</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("nombre", "Nombre:", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @* Utiliza un dropdown para mostrar los nombres de Mensajeros *@
+            @Html.DropDownList("NombreSeleccionado", new SelectList(ViewBag.MensajerosNombres), "Seleccione un nombre", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.zona_de_ruta, "Zona De Ruta:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.zona_de_ruta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.zona_de_ruta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!-- Utilizar el control de entrada de fecha (input type="date") -->
+                @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sobres_entregados, "Sobres Entregados:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sobres_entregados, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sobres_entregados, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sobres_recogidos, "Sobres Recogidos:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sobres_recogidos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sobres_recogidos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.monto, "Monto:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.monto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.monto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.descripcion, "Descripcion:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

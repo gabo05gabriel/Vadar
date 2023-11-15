@@ -1,0 +1,36 @@
+﻿/* Estilo base para los botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    /* Cambio de color al pasar el cursor */
+    .btn:hover {
+        background-color: #005ea6;
+    }
+
+    /* Efecto de pulsación al hacer clic */
+    .btn:active {
+        transform: scale(0.95);
+    }
+
+    /* Espacio entre los botones */
+    .btn + .btn {
+        margin-left: 10px;
+    }
+
+/* Media query para pantallas de ancho máximo de 768px (tabletas y móviles) */
+@media (max-width: 768px) {
+    /* Ajustar el tamaño de fuente y el relleno para pantallas más pequeñas */
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

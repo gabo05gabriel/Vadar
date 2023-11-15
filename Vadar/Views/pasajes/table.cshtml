@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Vadar.Models.pasajes>
+
+<link href="~/Estilos/tabla.css" rel="stylesheet" />
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.nombre)</th>
+        <th>@Html.DisplayNameFor(model => model.zona_de_ruta)</th>
+        <th>Fecha</th>
+        <th>@Html.DisplayNameFor(model => model.sobres_entregados)</th>
+        <th>@Html.DisplayNameFor(model => model.sobres_recogidos)</th>
+        <th>@Html.DisplayNameFor(model => model.monto)</th>
+        <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+            <td>@Html.DisplayFor(modelItem => item.zona_de_ruta)</td>
+            <td style="white-space: nowrap;">@item.fecha.ToString("yyyy-MM-dd")</td>
+            <td>@Html.DisplayFor(modelItem => item.sobres_entregados)</td>
+            <td>@Html.DisplayFor(modelItem => item.sobres_recogidos)</td>
+            <td>@Html.DisplayFor(modelItem => item.monto)</td>
+            <td>@Html.DisplayFor(modelItem => item.descripcion)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+</table>
